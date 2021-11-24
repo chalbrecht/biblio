@@ -33,6 +33,7 @@
 -->
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
@@ -40,6 +41,11 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.SeparatorMenuItem?>
 <?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
@@ -47,9 +53,9 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.biblio.HelloController">
+<VBox prefHeight="836.0" prefWidth="994.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.biblio.HelloController">
   <children>
-    <MenuBar VBox.vgrow="NEVER">
+    <MenuBar prefHeight="12.0" prefWidth="994.0" VBox.vgrow="NEVER">
       <menus>
         <Menu mnemonicParsing="false" text="File">
           <items>
@@ -88,38 +94,69 @@
         </Menu>
       </menus>
     </MenuBar>
-    <SplitPane dividerPositions="0.2505567928730512, 0.7505567928730512" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+    <SplitPane dividerPositions="0.25111358574610243, 0.794543429844098" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
       <items>
-        <AnchorPane>
-          <children>
-            <Label alignment="CENTER" layoutX="14.0" layoutY="14.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="Master" textAlignment="CENTER" wrapText="false">
-              <font>
-                <Font size="18.0" fx:id="x1" />
-              </font>
-              <textFill>
-                <Color red="0.624" green="0.624" blue="0.624" fx:id="x2" />
-              </textFill>
-            </Label>
-          </children>
-        </AnchorPane>
-        <ScrollPane prefHeight="-1.0" prefWidth="-1.0">
+        <AnchorPane />
+        <ScrollPane prefHeight="551.0" prefWidth="439.0">
                <content>
-                  <VBox fx:id="global" prefHeight="200.0" prefWidth="100.0">
+                  <VBox prefHeight="704.0" prefWidth="530.0">
                      <children>
-                        <fx:include fx:id="test" source="form2.fxml" />
-                        <fx:include fx:id="test2" source="form1.fxml" />
+                        <TableView prefHeight="565.0" prefWidth="513.0">
+                           <columns>
+                              <TableColumn prefWidth="75.0" text="Nom" />
+                              <TableColumn prefWidth="75.0" text="Author" />
+                              <TableColumn prefWidth="128.418701171875" text="Résumé" />
+                              <TableColumn prefWidth="78.56097412109375" text="colonne" />
+                              <TableColumn prefWidth="65.63409423828125" text="Rangée" />
+                              <TableColumn prefWidth="105.49993896484375" text="Parution" />
+                           </columns>
+                        </TableView>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Button mnemonicParsing="false" text="Button" />
+                              <Button mnemonicParsing="false" text="Button">
+                                 <graphic>
+                                    <ImageView fitHeight="32.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true" />
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </HBox>
                      </children>
                   </VBox>
                </content>
         </ScrollPane>
         <AnchorPane>
-          <children>
-            <Label alignment="CENTER" font="$x1" layoutX="14.0" layoutY="14.0" style="&#10;" text="Details" textAlignment="CENTER" textFill="$x2" wrapText="false" />
-          </children>
+               <children>
+                  <HBox prefHeight="661.0" prefWidth="200.0">
+                     <children>
+                        <VBox prefHeight="266.0" prefWidth="101.0">
+                           <children>
+                              <Label fx:id="labTitre" prefHeight="26.0" prefWidth="95.0" text="Titre :" />
+                              <Label fx:id="labAuteur" prefHeight="26.0" prefWidth="75.0" text="Auteur :" />
+                              <Label fx:id="labParution" prefHeight="26.0" prefWidth="64.0" text="Parution : " />
+                              <Label fx:id="labColonne" prefHeight="26.0" prefWidth="58.0" text="Colonne :" />
+                              <Label fx:id="labRangee" prefHeight="26.0" prefWidth="61.0" text="Rangée :" />
+                              <Label fx:id="labResume" prefHeight="169.0" prefWidth="105.0" text="Résumé :" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="661.0" prefWidth="98.0">
+                           <children>
+                              <TextField fx:id="texteTitre" prefHeight="10.0" prefWidth="100.0" />
+                              <TextField fx:id="texteAuteur" />
+                              <TextField fx:id="texteParution" />
+                              <TextField fx:id="texteColonne" />
+                              <TextField fx:id="texteRangee" />
+                              <TextArea fx:id="texteResume" prefHeight="200.0" prefWidth="160.0" />
+                              <Button fx:id="btnValider" mnemonicParsing="false" text="VALIDER" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
         </AnchorPane>
       </items>
     </SplitPane>
-    <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" VBox.vgrow="NEVER">
+    <HBox id="HBox" alignment="CENTER_LEFT" prefHeight="0.0" prefWidth="994.0" spacing="5.0" VBox.vgrow="NEVER">
       <children>
         <Label maxHeight="1.7976931348623157E308" maxWidth="-1.0" text="Left status" HBox.hgrow="ALWAYS">
           <font>
