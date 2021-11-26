@@ -70,7 +70,7 @@
             <SeparatorMenuItem mnemonicParsing="false" />
             <MenuItem mnemonicParsing="false" text="Preferences…" />
             <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem mnemonicParsing="false" text="Quit" />
+            <MenuItem fx:id="idQuitter" mnemonicParsing="false" text="Quit" />
           </items>
         </Menu>
         <Menu mnemonicParsing="false" text="Edit">
@@ -111,14 +111,23 @@
                               <TableColumn fx:id="idParution" prefWidth="105.49993896484375" text="Parution" />
                            </columns>
                         </TableView>
-                        <HBox prefHeight="100.0" prefWidth="200.0">
+                        <HBox fx:id="idHboxBtn" prefHeight="100.0" prefWidth="200.0">
                            <children>
-                              <Button fx:id="btnCreer" mnemonicParsing="false" text="Button" />
-                              <Button mnemonicParsing="false" text="Button">
+                              <Button fx:id="btnCreer" mnemonicParsing="false" text="Ajouter" />
+                              <Button mnemonicParsing="false" onAction="#DeleteRowFromTable" text="Delete">
                                  <graphic>
                                     <ImageView fitHeight="32.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true" />
                                  </graphic>
                               </Button>
+                              <Button fx:id="BtnModif" mnemonicParsing="false" onAction="#ModifFromLigne" text="Modifier" />
+                              <Label fx:id="idMsgVude" prefHeight="43.0" prefWidth="210.0" text="La Bibilothèque est vide !">
+                                 <HBox.margin>
+                                    <Insets left="70.0" />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </Label>
                            </children>
                         </HBox>
                      </children>
@@ -148,6 +157,7 @@
                               <TextField fx:id="texteRangee" />
                               <TextArea fx:id="texteResume" prefHeight="200.0" prefWidth="160.0" />
                               <Button fx:id="btnValider" mnemonicParsing="false" text="VALIDER" />
+                              <Label fx:id="idLabelIncorect" prefHeight="79.0" prefWidth="138.0" text="Entre inccorect" />
                            </children>
                         </VBox>
                      </children>
